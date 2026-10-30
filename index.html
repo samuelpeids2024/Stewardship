@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>在職場上活出基督｜工作、順服與安息</title>
+
+<!-- ====== 社交預覽（部署後把 yourname / repo 換成真實網址） ====== -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="在職場上活出基督 — Stewardship 管家職分">
+<meta property="og:description" content="工作、順服、安息。從創世記到歌羅西書，看見你的職場是神的安排，活出屬天的見證。">
+<meta property="og:url" content="https://samuelpeids2024.github.io/">
+<meta property="og:image" content="https://samuelpeids2024.github.io/s.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="在職場上活出基督 — Stewardship 管家職分">
+<meta name="twitter:description" content="工作、順服、安息。從創世記到歌羅西書，看見你的職場是神的安排，活出屬天的見證。">
+<meta name="twitter:image" content="https://samuelpeids2024.github.io/s.jpg">
+
+<style>
+  :root{
+    --bg:#07060f;
+    --bg2:#0d0a1f;
+    --purple:#7b3fe4;
+    --purple2:#a855f7;
+    --gold:#e8c46a;
+    --gold2:#f5e3a8;
+    --text:#ece9f5;
+    --muted:#a99fd0;
+    --line:rgba(168,85,247,.25);
+    --glow:0 0 40px rgba(123,63,228,.55);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Noto Serif TC","Songti TC","Georgia",serif;
+    line-height:1.9;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* 噪点纹理 */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:1;pointer-events:none;
+    opacity:.035;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .grain{position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.05;
+    background-image:radial-gradient(rgba(255,255,255,.8) 1px,transparent 1px);
+    background-size:3px 3px;}
+
+  /* ============ 布局 ============ */
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;position:relative;z-index:5;}
+  section{padding:120px 0;position:relative;}
+  .reveal{opacity:0;transform:translateY(48px);transition:opacity 1s cubic-bezier(.22,.68,.35,1),transform 1s cubic-bezier(.22,.68,.35,1);}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* ============ 导航 ============ */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    background:rgba(7,6,15,.6);
+    border-bottom:1px solid rgba(168,85,247,.12);
+    transition:all .4s;
+  }
+  nav.scrolled{background:rgba(7,6,15,.88);border-bottom-color:var(--line);}
+  .nav-in{max-width:1180px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;gap:28px;}
+  .logo{font-weight:700;font-size:16px;letter-spacing:2px;color:var(--gold);white-space:nowrap;
+    font-family:"Noto Sans TC","Heiti TC",sans-serif;}
+  .logo span{color:var(--text);}
+  .nav-links{display:flex;gap:22px;margin-left:auto;flex-wrap:wrap;justify-content:flex-end;}
+  .nav-links a{
+    color:var(--muted);text-decoration:none;font-size:13.5px;letter-spacing:1px;
+    transition:color .3s;font-family:"Noto Sans TC","Heiti TC",sans-serif;
+    white-space:nowrap;
+  }
+  .nav-links a:hover{color:var(--gold2);}
+
+  /* ============ 通用标题 ============ */
+  .kicker{
+    font-family:"Noto Sans TC","Heiti TC",sans-serif;
+    font-size:12.5px;letter-spacing:5px;text-transform:uppercase;
+    color:var(--purple2);margin-bottom:18px;font-weight:500;
+  }
+  .sec-num{
+    display:inline-block;font-family:"Inter","Helvetica Neue",sans-serif;
+    font-size:13px;letter-spacing:3px;font-weight:800;
+    color:var(--gold);border:1px solid rgba(232,196,106,.4);
+    padding:5px 14px;border-radius:999px;margin-bottom:22px;
+  }
+  h2{
+    font-size:clamp(34px,5.5vw,64px);line-height:1.2;font-weight:700;
+    letter-spacing:1px;margin-bottom:28px;
+  }
+  h2 .grad{
+    background:linear-gradient(100deg,var(--gold) 0%,var(--gold2) 45%,#fff 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  h2 .violet{color:var(--purple2);}
+  .lede{font-size:clamp(16px,1.6vw,19px);color:var(--muted);max-width:760px;margin-bottom:40px;line-height:2;}
+
+  /* ============ 封面 ============ */
+  .hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:140px 0 100px;}
+  .orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;z-index:3;pointer-events:none;}
+  .orb.a{width:520px;height:520px;background:var(--purple);top:-120px;left:-160px;}
+  .orb.b{width:600px;height:600px;background:#3b1f7a;bottom:-200px;right:-220px;opacity:.45;}
+  .orb.c{width:300px;height:300px;background:var(--gold);top:40%;right:10%;opacity:.14;}
+  .hero-in{position:relative;z-index:6;}
+  .hero .kicker{font-size:13px;letter-spacing:6px;}
+  .hero h1{
+    font-size:clamp(46px,9vw,118px);line-height:.98;font-weight:800;
+    letter-spacing:-1px;margin:26px 0 34px;
+  }
+  .hero h1 .line{display:block;overflow:hidden;}
+  .hero h1 .line span{display:block;animation:rise 1.1s cubic-bezier(.22,.68,.35,1) both;}
+  .hero h1 .line:nth-child(1) span{animation-delay:.1s;}
+  .hero h1 .line:nth-child(2) span{animation-delay:.28s;}
+  .hero h1 .line:nth-child(3) span{animation-delay:.46s;}
+  @keyframes rise{from{transform:translateY(105%);}to{transform:translateY(0);}}
+  .hero h1 em{font-style:normal;color:var(--purple2);}
+  .hero-sub{font-size:clamp(17px,2vw,23px);color:var(--gold2);max-width:680px;line-height:1.9;
+    border-left:3px solid var(--gold);padding-left:26px;margin-bottom:46px;}
+  .meta-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;}
+  .meta-cards .card{
+    border:1px solid var(--line);border-radius:16px;padding:22px 24px;
+    background:linear-gradient(160deg,rgba(123,63,228,.12),rgba(255,255,255,.02));
+  }
+  .meta-cards .card b{display:block;font-family:"Noto Sans TC","Heiti TC",sans-serif;
+    font-size:12.5px;letter-spacing:3px;color:var(--purple2);margin-bottom:8px;font-weight:600;}
+  .meta-cards .card span{font-size:16px;color:var(--text);}
+  .scroll-hint{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:6;
+    color:var(--muted);font-size:12px;letter-spacing:3px;
+    font-family:"Noto Sans TC",sans-serif;animation:float 2.4s ease-in-out infinite;}
+  .scroll-hint::after{content:"";display:block;width:1px;height:42px;margin:12px auto 0;
+    background:linear-gradient(to bottom,var(--purple2),transparent);}
+  @keyframes float{0%,100%{transform:translate(-50%,0);opacity:.6}50%{transform:translate(-50%,10px);opacity:1}}
+
+  /* ============ 引言 ============ */
+  .quote-block{
+    border:1px solid var(--line);border-radius:24px;padding:52px 56px;
+    background:radial-gradient(120% 120% at 0% 0%,rgba(123,63,228,.16),transparent 60%),
+               rgba(255,255,255,.02);
+    position:relative;
+  }
+  .quote-block .mark{position:absolute;top:18px;left:28px;font-size:120px;line-height:.6;
+    color:var(--purple);opacity:.35;font-family:Georgia,serif;}
+  .quote-block p{font-size:clamp(18px,2vw,24px);line-height:2.1;margin-bottom:22px;position:relative;z-index:2;}
+  .quote-block p strong{color:var(--gold2);font-weight:600;}
+  .pull{
+    margin-top:40px;padding:26px 30px;border-radius:14px;
+    background:linear-gradient(100deg,rgba(232,196,106,.12),rgba(232,196,106,.03));
+    border-left:4px solid var(--gold);font-size:clamp(17px,1.7vw,20px);color:var(--gold2);
+  }
+
+  /* ============ 内容两栏 ============ */
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start;}
+  .two .col-img{position:relative;}
+  .two .col-img .imgbox{
+    border-radius:22px;overflow:hidden;border:1px solid var(--line);
+    box-shadow:var(--glow);position:relative;aspect-ratio:4/5;
+  }
+  .two .col-img .imgbox img{width:100%;height:100%;object-fit:cover;display:block;}
+  .two .col-img .imgbox::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(to top,rgba(7,6,15,.75),transparent 55%);}
+  .two .col-img .cap{position:absolute;bottom:20px;left:24px;right:24px;z-index:3;
+    font-family:"Noto Sans TC",sans-serif;font-size:12.5px;letter-spacing:2px;color:var(--gold2);}
+  .points{margin-top:38px;}
+  .pt{border-top:1px solid var(--line);padding:26px 0;}
+  .pt:last-child{border-bottom:1px solid var(--line);}
+  .pt h3{font-size:clamp(20px,2.2vw,26px);margin-bottom:12px;color:var(--text);}
+  .pt h3 i{font-style:normal;color:var(--gold);font-family:Georgia,serif;margin-right:14px;
+    font-size:.85em;opacity:.85;}
+  .pt p{color:var(--muted);font-size:16.5px;line-height:2;}
+
+  /* ============ 经文 ============ */
+  .verse{
+    border:1px solid var(--line);border-radius:18px;padding:30px 34px;margin:26px 0;
+    background:linear-gradient(135deg,rgba(123,63,228,.10),rgba(255,255,255,.02));
+    position:relative;
+  }
+  .verse::before{content:"";position:absolute;left:0;top:24px;bottom:24px;width:3px;
+    background:linear-gradient(var(--gold),var(--purple2));border-radius:3px;}
+  .verse p{font-size:clamp(17px,1.8vw,21px);color:var(--gold2);line-height:2;margin-bottom:10px;}
+  .verse cite{font-style:normal;font-family:"Noto Sans TC",sans-serif;font-size:13px;
+    letter-spacing:2px;color:var(--purple2);}
+
+  /* ============ 四个动作 ============ */
+  .grid4{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:44px;}
+  .act{position:relative;border:1px solid var(--line);border-radius:20px;padding:36px 32px;
+    background:linear-gradient(160deg,rgba(123,63,228,.14),rgba(255,255,255,.02));
+    overflow:hidden;transition:transform .4s,box-shadow .4s;}
+  .act:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(123,63,228,.35);}
+  .act .n{font-family:Georgia,serif;font-size:52px;line-height:1;font-weight:800;
+    background:linear-gradient(160deg,var(--gold),var(--purple2));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+    margin-bottom:16px;}
+  .act h3{font-size:22px;margin-bottom:12px;}
+  .act p{color:var(--muted);font-size:15.5px;line-height:1.95;}
+
+  /* ============ 大字落地 ============ */
+  .bigword{text-align:center;padding:60px 0;}
+  .bigword .word{font-size:clamp(48px,12vw,180px);font-weight:800;line-height:1;letter-spacing:-2px;
+    background:linear-gradient(95deg,var(--purple) 0%,var(--purple2) 40%,var(--gold) 75%,var(--gold2) 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+    filter:drop-shadow(0 0 30px rgba(123,63,228,.4));}
+  .bigword .en{font-family:Georgia,serif;font-style:italic;font-size:clamp(15px,1.6vw,19px);
+    color:var(--muted);letter-spacing:4px;margin-top:18px;}
+
+  /* ============ 见证 ============ */
+  .story{border-radius:24px;padding:44px 48px;margin-bottom:26px;
+    background:linear-gradient(135deg,rgba(232,196,106,.09),rgba(123,63,228,.09));
+    border:1px solid var(--line);position:relative;}
+  .story .tag{position:absolute;top:30px;right:34px;font-family:"Noto Sans TC",sans-serif;
+    font-size:11.5px;letter-spacing:2px;color:var(--gold);border:1px solid rgba(232,196,106,.4);
+    padding:4px 12px;border-radius:999px;}
+  .story h3{font-size:24px;margin-bottom:16px;color:var(--gold2);}
+  .story p{font-size:17.5px;line-height:2.05;color:var(--text);}
+  .story p+p{margin-top:14px;}
+
+  /* ============ 结语 ============ */
+  .closing{text-align:center;position:relative;padding:140px 0;}
+  .closing .orb{width:700px;height:700px;background:var(--purple);top:50%;left:50%;
+    transform:translate(-50%,-50%);opacity:.35;}
+  .closing-in{position:relative;z-index:6;}
+  .closing h2{font-size:clamp(40px,6vw,76px);margin-bottom:40px;}
+  .prayer{border:1px solid var(--line);border-radius:22px;padding:48px 52px;margin-top:40px;
+    background:linear-gradient(160deg,rgba(123,63,228,.12),rgba(255,255,255,.02));
+    text-align:left;max-width:900px;margin-left:auto;margin-right:auto;}
+  .prayer h3{font-family:"Noto Sans TC",sans-serif;font-size:14px;letter-spacing:5px;
+    color:var(--purple2);margin-bottom:24px;font-weight:600;}
+  .prayer p{color:var(--muted);font-size:17px;line-height:2.15;margin-bottom:16px;}
+  .prayer .amen{color:var(--gold2);font-weight:600;margin-top:20px;display:block;}
+
+  footer{border-top:1px solid var(--line);padding:44px 0 60px;text-align:center;
+    font-family:"Noto Sans TC",sans-serif;font-size:13px;letter-spacing:2px;color:var(--muted);}
+
+  /* ============ 响应式 ============ */
+  @media(max-width:900px){
+    .two{grid-template-columns:1fr;gap:40px;}
+    .grid4{grid-template-columns:1fr;}
+    .meta-cards{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+    section{padding:80px 0;}
+    .quote-block,.prayer,.story{padding:32px 26px;}
+    .closing .orb{width:420px;height:420px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<nav id="nav">
+  <div class="nav-in">
+    <div class="logo">在職場上 <span>活出基督</span></div>
+    <div class="nav-links">
+      <a href="#intro">引言</a>
+      <a href="#s1">神的安排</a>
+      <a href="#s2">你的身分</a>
+      <a href="#s3">如何工作</a>
+      <a href="#s4">只問忠心</a>
+      <a href="#s5">人的問題</a>
+      <a href="#s6">真安息</a>
+      <a href="#witness">見證</a>
+      <a href="#closing">結語</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= 封面 ================= -->
+<header class="hero">
+  <div class="orb a"></div><div class="orb b"></div><div class="orb c"></div>
+  <div class="wrap hero-in">
+    <div class="kicker reveal">A Faith At Work Message · 職場講道</div>
+    <h1>
+      <span class="line"><span>在職場上</span></span>
+      <span class="line"><span><em>活出基督</em></span></span>
+      <span class="line"><span>工作 · 順服 · 安息</span></span>
+    </h1>
+    <p class="hero-sub reveal">工作不是為了換錢，而是神的呼召。<br>你所做的每一件事，都是為那一位看不見的主人做的。</p>
+    <div class="meta-cards reveal">
+      <div class="card"><b>核心經文</b><span>歌羅西書 3:22–24</span></div>
+      <div class="card"><b>關鍵真理</b><span>你們所事奉的，乃是主基督</span></div>
+      <div class="card"><b>六個部分</b><span>呼召 · 身分 · 工作 · 順服 · 安息 · 見證</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
+</header>
+
+<!-- ================= 引言 ================= -->
+<section id="intro">
+  <div class="wrap">
+    <div class="kicker reveal">INTRODUCTION · 引言</div>
+    <div class="quote-block reveal">
+      <div class="mark">&ldquo;</div>
+      <p>我們常把「工作」定義為<strong>「能換取金錢的事」</strong>。所以學生說自己沒有工作，退休的人說自己沒有工作，在家洗碗、帶孩子的家庭主婦也說自己沒有工作。</p>
+      <p>但聖經對工作的看法完全不同——<strong>神從一開始就給人工作</strong>，甚至在伊甸園一切美好的時候，神就讓人管理園子。工作是神的祝福，不是咒詛。</p>
+      <div class="pull">我們若不明白工作的來源與價值，等於糊塗度過人生至少三分之二的時間。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 一、工作是神安排的 ================= -->
+<section id="s1">
+  <div class="wrap">
+    <div class="two">
+      <div class="col-img reveal">
+        <div class="imgbox">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80&auto=format&fit=crop" alt="职场中的人手与光">
+          <div class="cap">神所安排的每一個崗位</div>
+        </div>
+      </div>
+      <div class="reveal">
+        <span class="sec-num">PART 01</span>
+        <div class="kicker">YOUR WORK IS APPOINTED</div>
+        <h2>你的工作，<br>是<span class="grad">神親自安排</span>的</h2>
+        <div class="points">
+          <div class="pt">
+            <h3><i>01</i>價值不在乎報酬</h3>
+            <p>同樣一件事，如果是神要你做的、你是為神做的，就有永恆價值；如果是為自己做的，就算賺了大錢，也帶不走。詩篇 139 篇說，神在你未出母腹以前，就已經把你一生的日子、要做的事都寫在冊上了。</p>
+          </div>
+          <div class="pt">
+            <h3><i>02</i>有工作要感謝，沒工作也要感謝</h3>
+            <p>找工作本身就是一份工作。若你正失業，要知道這也是神的安排——祂要你在這段時間學功課。將來在永恆中，神是按你忠心的程度給獎賞，而不是按你賺了多少錢。</p>
+          </div>
+          <div class="pt">
+            <h3><i>03</i>榮耀裡的獎賞是一樣的</h3>
+            <p>總裁和清潔工的地位、薪資差很多，但如果兩個都是基督徒，都努力做神要他們做的事，將來在榮耀裡的獎賞是一樣的。千萬不要用短暫的眼光，來衡量永恆的榮耀。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 二、你是谁 ================= -->
+<section id="s2" style="background:linear-gradient(180deg,transparent,var(--bg2),transparent);">
+  <div class="wrap">
+    <div class="two">
+      <div class="reveal" style="order:2;">
+        <span class="sec-num">PART 02</span>
+        <div class="kicker">WHO YOU ARE DEFINES WHY</div>
+        <h2>你是誰，<br>決定了你<span class="violet">為什麼</span>工作</h2>
+        <div class="verse">
+          <p>「你們已經死了，你們的生命與基督一同藏在神裡面。基督是我們的生命。」</p>
+          <cite>歌羅西書 3:3–4 · 整個職場觀的基礎</cite>
+        </div>
+        <div class="points">
+          <div class="pt">
+            <h3><i>01</i>你不再是「自己的人」</h3>
+            <p>沒有信主以前，你工作是為老闆、為自己。但現在，你的生命已經與基督同釘十字架，現在活著的不再是你，而是基督在你裡面活。你是「屬於基督的醫生」、「屬於基督的工程師」、「屬於基督的家庭主婦」。你的價值不再由工作成敗決定，而是從神而來。</p>
+          </div>
+          <div class="pt">
+            <h3><i>02</i>外面的難處「摸不著」你</h3>
+            <p>聖經從未應許信主以後客戶變好、老闆對你特別好、同事不排擠你。但對你而言，因為你與基督一同藏在神裡面，他們對你好、對你壞，都摸不著你。跟神比起來，困難就只是「天上飄來五個字——啥都不是事兒」。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-img reveal" style="order:1;">
+        <div class="imgbox">
+          <img src="https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?w=900&q=80&auto=format&fit=crop" alt="窗光中的双手">
+          <div class="cap">基督是我的生命</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 三、如何为主工作 ================= -->
+<section id="s3">
+  <div class="wrap">
+    <span class="sec-num reveal">PART 03</span>
+    <div class="kicker reveal">HOW TO WORK FOR THE LORD</div>
+    <h2 class="reveal">在職場上，<br>如何<span class="grad">為主工作</span>？</h2>
+    <p class="lede reveal">保羅在歌羅西書 3:22–24 和以弗所書 6:5–9，給了我們具體的教導。四個動作，把平凡的日子做成永恆的事奉。</p>
+    <div class="grid4">
+      <div class="act reveal">
+        <div class="n">01</div>
+        <h3>聽從肉身的主人，像聽從基督</h3>
+        <p>老闆、客戶、銀行、指導教授，都是你「肉身的主人」。要用誠實的心聽從他們，但底線是不能為了討好人而得罪神。敬畏神，是職場上最高的原則。</p>
+      </div>
+      <div class="act reveal">
+        <div class="n">02</div>
+        <h3>不要只在人眼前事奉</h3>
+        <p>老闆在的時候認真、老闆一走就鬆懈——這不是事奉。神要我們像透明的金子，沒有什麼需要隱藏。怕神的人，就不需要怕人；你真的敬畏神，神就負你一切責任。</p>
+      </div>
+      <div class="act reveal">
+        <div class="n">03</div>
+        <h3>無論做什麼，從心裡做</h3>
+        <p>因為我的生命已經屬於主，所以無論做什麼都是給祂的。教會洗碗是給耶穌洗，在家洗碗也是為主做的。一個是「幹活」把事情做完，另一個是「服事」從心裡做——獎賞截然不同。</p>
+      </div>
+      <div class="act reveal">
+        <div class="n">04</div>
+        <h3>工作是神的，成敗都在祂手中</h3>
+        <p>祂託付給我們，今天可以給，明天可以拿走。成功時知道是祂讓我們成功，失敗時也要感謝讚美祂。每一個失敗，在永恆中都比成功帶來更大的祝福。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 大字：不問喜歡 ================= -->
+<section id="s4">
+  <div class="wrap">
+    <span class="sec-num reveal">PART 04</span>
+    <div class="kicker reveal">DON'T ASK IF YOU LIKE IT</div>
+    <div class="bigword reveal">
+      <div class="word">不問喜不喜歡</div>
+      <div class="en">ASK NOT WHETHER YOU LIKE IT — ASK HOW TO BE FAITHFUL</div>
+    </div>
+    <p class="lede reveal" style="text-align:center;margin:0 auto;">利未人在聖殿裡宰牛、剝皮、清理內臟，天不亮就要起床，又髒又累，沒有人會「喜歡」。但這是神的託付，他們就忠心去做。今天，我們也不要問自己喜不喜歡現在的工作，而要問：<strong style="color:var(--gold2);">主啊，你把我放在這裡，我要如何忠心？</strong></p>
+  </div>
+</section>
+
+<!-- ================= 五、人的问题 ================= -->
+<section id="s5" style="background:linear-gradient(180deg,transparent,var(--bg2),transparent);">
+  <div class="wrap">
+    <span class="sec-num reveal">PART 05</span>
+    <div class="kicker reveal">THE HARDEST PART IS PEOPLE</div>
+    <h2 class="reveal">職場上最痛苦的，<br>是<span class="violet">「人」</span>的問題</h2>
+    <p class="lede reveal">給我們最多痛苦的，往往不是工作本身，而是在工作中遇見的人——難搞的老闆、出賣你的同事、不懂事的屬下。家裡也一樣，夫妻吵架時每個人都要「當頭」。</p>
+    <div class="grid4">
+      <div class="act reveal">
+        <div class="n">A</div>
+        <h3>問題不是別人，是你沒改變</h3>
+        <p>工作中你碰到的人事物，都是經過祂量身定做的，是你要碰到的，別人還沒那個機會。為什麼給你量成這個樣子？因為要改變你。你沒有改變，永遠是問題。</p>
+      </div>
+      <div class="act reveal">
+        <div class="n">B</div>
+        <h3>順服，是成熟的品格</h3>
+        <p>遇到讓你極其痛苦的同事，你可以拍桌子不幹，但功課學不到；也可以咬著牙幹，卻充滿苦毒。最好的路是順服——存敬畏基督的心，默然不語，學主要你學的功課。</p>
+      </div>
+      <div class="act reveal">
+        <div class="n">C</div>
+        <h3>順服不是「同意」</h3>
+        <p>跟意見相同的人相處，那叫同意。順服是我有意見、有想法，但我願意伏下來。存心順服，就是想方設法找機會順服。只有在我們裡面，才能經歷真實生命的長大。</p>
+      </div>
+      <div class="act reveal">
+        <div class="n">D</div>
+        <h3>享福必須降服</h3>
+        <p>有一首詩歌寫「我願意降服」——原詞是「降伏」，投降的降、順服的服。當你肯降服，神有好多祂早就想給你的福氣，現在可以傾倒在生命中，因為你已經有成熟的生命去承受。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 六、真安息 ================= -->
+<section id="s6">
+  <div class="wrap">
+    <span class="sec-num reveal">PART 06</span>
+    <div class="kicker reveal">ENTER HIS REST</div>
+    <h2 class="reveal">在職場上，<br>進入<span class="grad">真正的安息</span></h2>
+    <div class="two" style="margin-top:60px;">
+      <div class="col-img reveal">
+        <div class="imgbox">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900&q=80&auto=format&fit=crop" alt="湖面与光影">
+          <div class="cap">祂是安息日的主</div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="points">
+          <div class="pt">
+            <h3><i>01</i>聖經的安息，不是睡到自然醒</h3>
+            <p>睡到後來你會覺得無趣，刷手機刷到你煩——那不叫安息。安息，是一個人的生命扎根在永恆裡面；是知道他要做的事全部都搞定了；是全然享受神自己的豐富和美麗。</p>
+          </div>
+          <div class="pt">
+            <h3><i>02</i>每一天都是安息日</h3>
+            <p>今天在耶穌基督裡，每一天都是安息日。忙碌時祂是主，休息時祂是主，成功時祂是主，失敗時祂還是主。只有在祂裡面，我們才有安息。</p>
+          </div>
+          <div class="pt">
+            <h3><i>03</i>沒有安息的根本原因：不信</h3>
+            <p>希伯來書說，那些人沒有進入安息，是因為不信。老闆說「兩週後走人」，有人回「哈利路亞」——因為這工作是禱告來的，神用老闆的口叫他走，還附一筆錢。這就是信心的安息。</p>
+          </div>
+          <div class="pt">
+            <h3><i>04</i>主在船上：真安息的樣子</h3>
+            <p>門徒遇風暴嚇得半死，主卻睡得極沉；狂風暴雨叫不醒祂，門徒一句「夫子，我們喪命啦」卻叫醒了祂。因為主有真安息，又因著愛，祂出了自己的安息、進入門徒的焦慮，為要帶他們進入主的安息。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 见证 ================= -->
+<section id="witness" style="background:linear-gradient(180deg,transparent,var(--bg2),transparent);">
+  <div class="wrap">
+    <div class="kicker reveal">THE REAL TESTIMONY</div>
+    <h2 class="reveal">基督徒在職場的見證：<br>不是<span class="violet">優秀</span>，而是<span class="grad">平安</span></h2>
+    <p class="lede reveal">佛教徒、回教徒、無神論者裡，也有非常優秀、進最好的大學、拿諾貝爾獎的人。<strong style="color:var(--gold2);">優秀，不能見證我們的神。</strong>真正的見證，是出人意外的平安。</p>
+    <div class="story reveal">
+      <span class="tag">見證一 · 職場</span>
+      <h3>公司被併購，只有他每天開心上班</h3>
+      <p>一位弟兄的公司被併購，高層第一批被裁，所有同事愁眉苦臉，只有他每天開開心心上班。人家問他為什麼，他說：「因為我後台硬——我認識耶穌，比那個買公司的總經理還大。」</p>
+      <p>當所有的人都沒有平安的時候，他有出人意外的平安，這就叫見證。</p>
+    </div>
+    <div class="story reveal">
+      <span class="tag">見證二 · 病痛</span>
+      <h3>候診室裡，只有他一個人在笑</h3>
+      <p>另一位弟兄得癌症開刀，回診時候診室坐滿了癌友，沒有一個人笑。一個護士走過來問他：「你是基督徒啊？」因為只有他坐在那裡笑。</p>
+      <p>他不是故意要笑，而是裡面真的有平安——如果去見主，那是好的無比；如果留下來，是為福音的好處，兩邊都贏。</p>
+    </div>
+    <div class="pull reveal" style="margin-top:34px;">在極大的患難中，卻有說不出來、滿有榮光的大喜樂——這才是基督徒的見證。這不是我們做出來的，而是當你真的相信祂是你的主、祂掌管萬有，你就不能不喜樂。</div>
+  </div>
+</section>
+
+<!-- ================= 结语 ================= -->
+<section id="closing">
+  <div class="orb"></div>
+  <div class="wrap closing">
+    <div class="closing-in reveal">
+      <div class="kicker">OFFER YOUR BEST</div>
+      <h2>把<span class="grad">最好的</span><br>獻給祂</h2>
+      <p class="lede" style="margin:0 auto;">我們從出生開始就有工作，這工作要一直做到永永遠遠。不要等到退休、等世界不要你了，才把「剩下的」獻給神。主耶穌連門徒給祂的剩餘燒魚都吃了——祂不嫌棄我們最差的奉獻。但祂更渴望的，是你從今天開始，把生命中最好的獻給祂。</p>
+      <div class="verse" style="max-width:900px;margin:44px auto 0;text-align:left;">
+        <p>「你們作僕人的，要凡事聽從你們肉身的主人……你們所事奉的乃是主基督。」</p>
+        <cite>歌羅西書 3:22, 24</cite>
+      </div>
+      <div class="prayer">
+        <h3>禱 告</h3>
+        <p>主啊，感謝祢，因為工作是祢的祝福，不是咒詛。感謝祢把我們每一個人擺在現在的崗位上，為要訓練我們、使用我們。</p>
+        <p>求祢開恩可憐我們，讓我們看見自己已經與基督同釘十字架，現在活著的不再是我，而是基督在我們裡面活。幫助我們在職場上存敬畏的心，從心裡做，像是給主做的。</p>
+        <p>當我們遇到難處、遇到不好相處的人，求祢讓我們學會順服，讓我們的生命被改變，而不是去改變別人。更求祢讓我們每一天都進入祢的安息，在這個沒有盼望的世代中，流露出祢那出人意外的平安和滿有榮光的大喜樂，讓人看見就認出我們是屬祢的人。</p>
+        <span class="amen">奉主耶穌基督寶貝的名求，阿門。</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // 滚动入场
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  },{threshold:.14, rootMargin:'0px 0px -60px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // 导航高亮
+  const links = document.querySelectorAll('.nav-links a');
+  const secs = document.querySelectorAll('section, header.hero');
+  const nio = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const id = e.target.id;
+        links.forEach(a=>a.style.color = a.getAttribute('href')==='#'+id ? 'var(--gold2)' : '');
+      }
+    });
+  },{rootMargin:'-40% 0px -55% 0px'});
+  secs.forEach(s=>s.id && nio.observe(s));
+
+  // 导航背景
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll',()=>{
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  },{passive:true});
+</script>
+</body>
+</html>
